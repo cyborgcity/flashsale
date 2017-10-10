@@ -12,7 +12,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Service service = new Service();
-        service.initializeConfig();
         InputStream inputStream = null;
         if(args.length > 0 && args[0] != null){
             try {
@@ -41,7 +40,9 @@ public class Main {
             for(int i = 0; i < num; i++){
                 System.out.println(service.getResult(scanner.nextLine()));
             }
-        } catch (Exception e) {
+        } catch (WrongInputException e){
+            System.out.println(e.getLocalizedMessage());
+        }catch (Exception e) {
             e.printStackTrace();
         }
     }

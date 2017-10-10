@@ -16,7 +16,20 @@ public class Config {
     private Map<String, Integer> category = new HashMap<String, Integer>();
     private Map<String, Integer> brand = new HashMap<String, Integer>();
 
-    public void loadConfig(){
+    private static Config instance = null;
+
+    private Config(){}
+
+    public static Config getInstance(){
+        if(instance == null){
+            instance = new Config();
+            instance.loadConfig();
+        }
+        return instance;
+    }
+
+
+    private void loadConfig(){
         this.loadAncestor();
         this.loadCategory();
         this.loadBrand();

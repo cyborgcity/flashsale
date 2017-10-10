@@ -10,15 +10,14 @@ public class Service {
 
     private Map<String, Integer> discountTable = new HashMap<String, Integer>();
 
-    private Config config = new Config();
+    private Config config = Config.getInstance();
 
-    public void initializeConfig() {
-        config.loadConfig();
-    }
-
-    public void calculateDiscount(String[] line){
+    public void calculateDiscount(String[] line) throws WrongInputException {
         for(int i = 0; i < line.length; i++){
             String[] split = line[i].split(",");
+            if (!Utility.validateInput(config, split)){
+                throw new WrongInputException("Wrong Input Data. Please check Brand and Category.");
+            }
             Integer brandDiscount = config.getBrand().get(split[1].trim()) != null ? config.getBrand().get(split[1].trim()) : 0;
             Integer categoryDiscount = config.getCategory().get(split[2].trim()) != null ? config.getCategory().get(split[2].trim()) : 0;
             Integer discount = brandDiscount > categoryDiscount ? brandDiscount : categoryDiscount;
@@ -28,14 +27,17 @@ public class Service {
         }
     }
 
-    public Integer getResult(String line){
+    public Integer getResult(String line) throws WrongInputException {
         String[] split = line.split(",");
         Integer result = 0;
         for(int i = 0; i < split.length; i++){
             if(discountTable.containsKey(split[i].trim())){
                 result += discountTable.get(split[i].trim());
+            }else {
+                throw new WrongInputException("Wrong Item " + split[i] + ". Please pass correct Item number to be billed.");
             }
         }
         return result;
     }
+
 }
