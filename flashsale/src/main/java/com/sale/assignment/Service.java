@@ -40,4 +40,8 @@ public class Service {
         return result;
     }
 
+    public Map<String, Integer> getDiscountTable() {
+        return discountTable;
+    }
+
 }
