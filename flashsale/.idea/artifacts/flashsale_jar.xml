@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="flashsale:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/flashsale_jar</output-path>
+    <root id="archive" name="flashsale.jar">
+      <element id="module-output" name="flashsale" />
+    </root>
+  </artifact>
+</component>
