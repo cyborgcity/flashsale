@@ -1,5 +1,7 @@
 package com.sale.assignment;
 
+import com.sale.assignment.exception.WrongInputException;
+import com.sale.assignment.service.impl.Service;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +17,11 @@ public class AppServiceTest {
 
     @Before
     public void loadConfig(){
-        service =  new Service();
+        try {
+            service =  new Service();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Test

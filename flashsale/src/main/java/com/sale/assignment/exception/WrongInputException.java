@@ -1,4 +1,4 @@
-package com.sale.assignment;
+package com.sale.assignment.exception;
 
 /**
  * Created by Ravi on 01-10-2017.

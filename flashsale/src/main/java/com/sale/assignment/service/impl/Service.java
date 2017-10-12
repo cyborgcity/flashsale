@@ -1,4 +1,9 @@
-package com.sale.assignment;
+package com.sale.assignment.service.impl;
+
+import com.sale.assignment.util.Utility;
+import com.sale.assignment.exception.WrongInputException;
+import com.sale.assignment.config.impl.Config;
+import com.sale.assignment.service.IService;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,11 +11,14 @@ import java.util.Map;
 /**
  * Created by Ravi on 01-10-2017.
  */
-public class Service {
+public class Service implements IService{
 
     private Map<String, Integer> discountTable = new HashMap<String, Integer>();
 
     private Config config = Config.getInstance();
+
+    public Service() throws Exception {
+    }
 
     public void calculateDiscount(String[] line) throws WrongInputException {
         for(int i = 0; i < line.length; i++){

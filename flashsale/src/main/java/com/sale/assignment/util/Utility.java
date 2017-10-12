@@ -1,7 +1,8 @@
-package com.sale.assignment;
+package com.sale.assignment.util;
+
+import com.sale.assignment.config.impl.Config;
 
 import java.io.InputStream;
-import java.util.Map;
 
 /**
  * Created by Ravi on 01-10-2017.

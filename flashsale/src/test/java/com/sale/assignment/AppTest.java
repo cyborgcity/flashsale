@@ -1,5 +1,7 @@
 package com.sale.assignment;
 
+import com.sale.assignment.config.impl.Config;
+import com.sale.assignment.service.impl.Service;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,12 +13,14 @@ import org.junit.Test;
 public class AppTest {
 
     Config config = null;
-    Service service = null;
 
     @Before
     public void loadConfig(){
-        config = Config.getInstance();
-        service =  new Service();
+        try {
+            config = Config.getInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Test

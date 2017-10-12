@@ -1,6 +1,9 @@
 package com.sale.assignment;
 
-import java.io.File;
+import com.sale.assignment.exception.WrongInputException;
+import com.sale.assignment.service.impl.Service;
+import com.sale.assignment.util.Utility;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -10,7 +13,7 @@ import java.util.Scanner;
  * Created by Ravi on 01-10-2017.
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Service service = new Service();
         InputStream inputStream = null;
         if(args.length > 0 && args[0] != null){

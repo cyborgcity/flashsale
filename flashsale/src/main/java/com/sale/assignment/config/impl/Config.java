@@ -1,7 +1,7 @@
-package com.sale.assignment;
+package com.sale.assignment.config.impl;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import com.sale.assignment.config.IConfig;
+
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * Created by Ravi on 01-10-2017.
  */
-public class Config {
+public class Config implements IConfig{
 
     private Map<String, Integer> ancestor = new HashMap<String, Integer>();
     private Map<String, Integer> category = new HashMap<String, Integer>();
@@ -20,7 +20,7 @@ public class Config {
 
     private Config(){}
 
-    public static Config getInstance(){
+    public static Config getInstance() throws Exception{
         if(instance == null){
             instance = new Config();
             instance.loadConfig();
@@ -47,6 +47,7 @@ public class Config {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            throw e;
         }
     }
 
@@ -70,6 +71,7 @@ public class Config {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            throw e;
         }
     }
 
@@ -85,6 +87,7 @@ public class Config {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            throw e;
         }
     }
 
