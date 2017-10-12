@@ -1,6 +1,7 @@
 package com.sale.assignment;
 
 import com.sale.assignment.exception.WrongInputException;
+import com.sale.assignment.service.IService;
 import com.sale.assignment.service.impl.Service;
 import com.sale.assignment.util.Utility;
 
@@ -14,7 +15,7 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) throws Exception {
-        Service service = new Service();
+        IService service = new Service();
         InputStream inputStream = null;
         if(args.length > 0 && args[0] != null){
             try {
