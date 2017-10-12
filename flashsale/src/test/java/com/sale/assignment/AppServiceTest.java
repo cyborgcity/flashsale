@@ -1,6 +1,7 @@
 package com.sale.assignment;
 
 import com.sale.assignment.exception.WrongInputException;
+import com.sale.assignment.service.IService;
 import com.sale.assignment.service.impl.Service;
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,7 +14,7 @@ import java.util.Map;
  */
 public class AppServiceTest {
 
-    Service service = null;
+    IService service = null;
 
     @Before
     public void loadConfig(){

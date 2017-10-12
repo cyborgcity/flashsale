@@ -1,7 +1,6 @@
 package com.sale.assignment;
 
-import com.sale.assignment.config.impl.Config;
-import com.sale.assignment.service.impl.Service;
+import com.sale.assignment.config.Config;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

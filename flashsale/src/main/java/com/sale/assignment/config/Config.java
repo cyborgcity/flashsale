@@ -1,6 +1,4 @@
-package com.sale.assignment.config.impl;
-
-import com.sale.assignment.config.IConfig;
+package com.sale.assignment.config;
 
 import java.io.InputStream;
 import java.util.HashMap;
@@ -10,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by Ravi on 01-10-2017.
  */
-public class Config implements IConfig{
+public class Config {
 
     private Map<String, Integer> ancestor = new HashMap<String, Integer>();
     private Map<String, Integer> category = new HashMap<String, Integer>();

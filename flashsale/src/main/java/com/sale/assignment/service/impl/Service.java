@@ -2,7 +2,7 @@ package com.sale.assignment.service.impl;
 
 import com.sale.assignment.util.Utility;
 import com.sale.assignment.exception.WrongInputException;
-import com.sale.assignment.config.impl.Config;
+import com.sale.assignment.config.Config;
 import com.sale.assignment.service.IService;
 
 import java.util.HashMap;

@@ -1,6 +1,6 @@
 package com.sale.assignment.util;
 
-import com.sale.assignment.config.impl.Config;
+import com.sale.assignment.config.Config;
 
 import java.io.InputStream;
 
